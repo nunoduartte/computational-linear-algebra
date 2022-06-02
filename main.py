@@ -1,8 +1,8 @@
 from LU.LU_decomposition import LU_decomposition
 from Gauss_Jacobi.gauss_jacobi import Gauss_Jacobi
+from Lagrange_Interpolating_Polynomial.lagrange_interpolation import Lagrange_Interpolation
 
 if __name__ == '__main__':
-    #Test
     A = [[3, 2, 4],
           [1, 1, 2],
           [4, 3, -2]]
@@ -19,5 +19,12 @@ if __name__ == '__main__':
     b = [7, -8, 6]
     Gauss_Jacobi = Gauss_Jacobi(A, b, 0.01)
     print(Gauss_Jacobi.solve())
+
+    x_target = 1.5
+    x = [-1, 0, 2, 3]
+    y = [4, 1, -1, 4]
+    Lagrange_Interpolation = Lagrange_Interpolation(x_target, x, y)
+    print(Lagrange_Interpolation.solve())
+
 
 
