@@ -1,6 +1,7 @@
 from LU.LU_decomposition import LU_decomposition
 from Gauss_Jacobi.gauss_jacobi import Gauss_Jacobi
 from Lagrange_Interpolating_Polynomial.lagrange_interpolation import Lagrange_Interpolation
+from Jacobi_Method.jacobi_method import Jacobi_Method
 
 if __name__ == '__main__':
     A = [[3, 2, 4],
@@ -25,6 +26,12 @@ if __name__ == '__main__':
     y = [4, 1, -1, 4]
     Lagrange_Interpolation = Lagrange_Interpolation(x_target, x, y)
     print(Lagrange_Interpolation.solve())
+
+
+    matrix = [[3,2,0], [2,3,-1], [0,-1,3]]
+    tolerance = 10 ** (-5)
+    Jacobi_Method = Jacobi_Method(matrix, tolerance)
+    print(Jacobi_Method.solve())
 
 
 
