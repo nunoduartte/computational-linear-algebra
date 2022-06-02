@@ -22,3 +22,19 @@ class Matrix_Operations:
                 tempL.append(temp)
             tempM.append(tempL)
         return tempM
+
+    def is_symmetric(self, M, order):
+        number_of_rows = len(M)
+        number_of_columns = len(M[0])
+
+        if (number_of_rows != number_of_columns):
+            return False
+
+        j = 0
+        for i in range(order - 1):
+            while (j < order - 1):
+                if M[i][j + 1] != M[j + 1][i]:
+                    return False
+                j += 1
+            j = j - (j - 1)
+        return True

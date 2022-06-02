@@ -9,6 +9,10 @@ class Jacobi_Method:
 
     def solve(self):
         number_of_rows = len(self.matrix)
+
+        if (not self.matrix_operations.is_symmetric(self.matrix, number_of_rows)):
+            return -1
+
         eigenvector = [[float(i == j) for i in range(number_of_rows)]
                        for j in range(number_of_rows)]
         highest_value = self.__highest_value(self.matrix)
